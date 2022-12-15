@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import {
   updateGuide,
   getGuideById,
@@ -7,7 +7,7 @@ import {
 import "./GuideForm.css";
 
 export const UpdateGuideForm = () => {
-  const history = useHistory();
+  const navigate  = useNavigate();
   // eslint-disable-next-line
   const [isLoading, setIsLoading] = useState(true);
   const { guideId } = useParams();
@@ -119,7 +119,7 @@ export const UpdateGuideForm = () => {
 
           // Send POST request to your API
           updateGuide(editedGuide, guideId).then(() =>
-            history.push("/guides")
+          navigate("/guides")
           );
         }}
         className="btn btn-primary"
