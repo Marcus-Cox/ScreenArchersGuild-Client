@@ -1,5 +1,5 @@
 import React, { useRef } from "react"
-import { Link, useHistory  } from "react-router-dom"
+import { Link, useNavigate  } from "react-router-dom"
 import "./Auth.css"
 
 export const Register = () => {
@@ -10,7 +10,7 @@ export const Register = () => {
     const password = useRef()
     const verifyPassword = useRef()
     const passwordDialog = useRef()
-    const history = useHistory ()
+    const navigate  = useNavigate();
 
     const handleRegister = (e) => {
         e.preventDefault()
@@ -36,7 +36,7 @@ export const Register = () => {
                 .then(res => {
                     if ("token" in res) {
                         localStorage.setItem("lu_token", res.token)
-                        history.push("/")
+                        navigate("/")
                     }
                 })
         } else {
