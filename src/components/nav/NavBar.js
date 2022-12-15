@@ -24,11 +24,11 @@ export const NavBar = () => {
   return (
     <ul className="navbar">
       <li className="navbar__item">
-        <Link to="/reptileguides">All Guides</Link>
+        <Link to="/guides">All Guides</Link>
       </li>
       
       <li className="navbar__item">
-        <Link to="/reptileguides/new">Make New Guide</Link>
+        <Link to="/guides/new">Make New Guide</Link>
       </li>
 
       {localStorage.getItem("lu_token") !== null ? (
