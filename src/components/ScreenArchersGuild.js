@@ -1,7 +1,7 @@
 //This imports basic react functionality, I don't know -exactly- what it does but I need it for this app to work
 import React from "react"
-//This import is used to pull in "Route" and "Redirect" components. They are used to give the user navigation functionality in the app
-import { Route, Redirect } from "react-router-dom"
+//This import is used to pull in "Route" and "Navigate" components. They are used to give the user navigation functionality in the app
+import { Route, Navigate } from "react-router-dom"
 //import for application views
 import { ApplicationViews } from "./ApplicationViews"
 //This imports the Navbar component. The Navbar components has a link to logout, all Guides and a link to make a now guide
@@ -28,7 +28,7 @@ export const ScreenArchersGuild = () => (
                 </>
                 //if there is no valid token, the user is directed to the login page
             } else {
-                return <Redirect to="/login" />
+                return <Navigate to="/login" />
             }
         }} />
         {/* This code provides a path to the login page for the user */}
