@@ -36,7 +36,7 @@ export const ScreenArchersGuild = () => (
 
         {/* This code provides a path to the login page for the user */}
         <Route path="/login" element={<Login />}/>
- {/* This code provides a path to the Register page for the user */}
+        {/* This code provides a path to the Register page for the user */}
         <Route path="/register" element={<Register />} />
             </Routes>
     </BrowserRouter>

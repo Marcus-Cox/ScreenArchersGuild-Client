@@ -8,7 +8,8 @@ import React from "react";
 //Using history instance can redirect user to another page.
 //The history instance created by React Router uses a Stack( called “History Stack” ), that stores all the entries the user has visited.
 import { Link, useNavigate } from "react-router-dom";
-
+import { Login } from "../../auth/Login";
+import { Register } from "../../auth/Register";
 //CSS styling for the nav bar
 import "./NavBar.css";
 //This function is the navigation bar at the top of the webpage
@@ -41,7 +42,7 @@ export const NavBar = () => {
               //the ".push" method pushes a new entry onto the history stack.
               //having this at the end of this code lets the user successfully log out and redirects them to the login page
               //they go to the login page because "localStorage.removeItem("lu_token");" removes the token they are used as authentication
-              navigate({ pathname: "/" });
+              navigate({ pathname: "/login" });
             }}
           >
             Logout
@@ -51,12 +52,12 @@ export const NavBar = () => {
         <>
           <li className="nav-item">
             <Link className="nav-link" to="/login">
-              Login
+              <Login />
             </Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/register">
-              Register
+              <Register />
             </Link>
           </li>
         </>

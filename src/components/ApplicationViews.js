@@ -1,5 +1,5 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { GuideList } from "./guide/GuideList";
 import { NewGuideForm } from "./guide/NewGuideForm";
 import { UpdateGuideForm } from "./guide/UpdateGuideForm";
@@ -12,15 +12,15 @@ export const ApplicationViews = () => {
           lineHeight: "1.75rem",
         }}
       >
-        <Route exact path={["/", "/guides"]}>
-          <GuideList />
-        </Route>
+        <Routes>
+        <Route path="/guides" element={<GuideList />} />
         <Route exact path="/guides/new">
           <NewGuideForm />
         </Route>
         <Route exact path="/guides/:guideId/update">
           <UpdateGuideForm />
         </Route>
+        </Routes>
       </main>
     </>
   );
