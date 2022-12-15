@@ -1,0 +1,35 @@
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+}
+
+.cardBtn {
+    border-radius: 5px;
+    background-color: rgb(47, 156, 93);
+    box-shadow: 1px 1px 5px black;
+    color: white;
+    font-size: .7rem;
+    border: none;
+    padding: 5px;
+    width: 50px;
+    margin-left: 10px;
+    height: 30px;
+}
+
+.cardBtn:hover {
+    border-radius: 10px;
+    background-color: lightgray;
+    box-shadow: 1px 1px 5px black;
+    color: rgb(68, 195, 166);
+    font-size: .7rem;
+    border: none;
+    padding: 5px;
+    width: 50px;
+    margin-left: 10px
+}
+
+.reptileguide__image {
+    width: 50%;
+    height: auto;
+}
