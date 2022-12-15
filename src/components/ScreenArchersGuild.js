@@ -1,7 +1,7 @@
 //This imports basic react functionality, I don't know -exactly- what it does but I need it for this app to work
 import React from "react"
 //This import is used to pull in "Route" and "Navigate" components. They are used to give the user navigation functionality in the app
-import { Route, Navigate } from "react-router-dom"
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 //import for application views
 import { ApplicationViews } from "./ApplicationViews"
 //This imports the Navbar component. The Navbar components has a link to logout, all Guides and a link to make a now guide
@@ -16,6 +16,8 @@ import { Register } from "/home/marcus/workspace/screenarchersguild-client/src/a
 // then call that code whenever you need it using a single short command
 export const ScreenArchersGuild = () => (
     <>
+    <BrowserRouter>
+            <Routes>
         <Route render={() => {
             //this checks to see if a valid authentication token is being used
             if (localStorage.getItem("lu_token")) {
@@ -31,14 +33,12 @@ export const ScreenArchersGuild = () => (
                 return <Navigate to="/login" />
             }
         }} />
-        {/* This code provides a path to the login page for the user */}
-        <Route path="/login">
-            <Login />
-        </Route>
- {/* This code provides a path to the Register page for the user */}
-        <Route path="/register">
-            <Register />
-        </Route>
 
+        {/* This code provides a path to the login page for the user */}
+        <Route path="/login" element={<Login />}/>
+ {/* This code provides a path to the Register page for the user */}
+        <Route path="/register" element={<Register />} />
+            </Routes>
+    </BrowserRouter>
     </>
 )

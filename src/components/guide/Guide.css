@@ -1,9 +1,9 @@
 h2,
-.reptileguide__title,
-.reptileguide__description {
+.guide__title,
+.guide__description {
     text-align: center;
 }
-.reptileguide {
+.guide {
     background-color: rgb(123, 192, 148);
     margin: 20px;
     padding: 10px;
