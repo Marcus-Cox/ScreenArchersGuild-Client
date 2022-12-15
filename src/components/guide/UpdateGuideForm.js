@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import {
   updateGuide,
   getGuideById,
-} from "./GuideManager";
+} from "../../managers/GuideManager";
 import "./GuideForm.css";
 
 export const UpdateGuideForm = () => {

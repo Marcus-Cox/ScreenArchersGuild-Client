@@ -1,7 +1,7 @@
 //Fist Visiable information on page appers to house content seen on screen when rendered
 import React, { useEffect, useState } from "react"
 import { useNavigate, useParams } from 'react-router-dom'
-import { getGuides, deleteGuide } from "./GuideManager.js"
+import { getGuides, deleteGuide } from "../../managers/GuideManager.js"
 import "./Guide.css"
 import { GuideCard } from "./GuideCard.js"
 

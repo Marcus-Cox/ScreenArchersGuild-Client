@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { createGuide, getGuides } from "./GuideManager.js";
+import { createGuide, getGuides } from "../../managers/GuideManager.js";
 import "./GuideForm.css";
 
 export const NewGuideForm = () => {
