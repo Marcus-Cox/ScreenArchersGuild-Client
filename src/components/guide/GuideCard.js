@@ -1,10 +1,10 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./GuideCard.css";
 
 export const GuideCard = ({ guide, delGuide }) => {
 // eslint-disable-next-line
-  const history = useHistory();
+const navigate  = useNavigate();
 
   return (
     <section key={`guide--${guide.id}`} className="guide">

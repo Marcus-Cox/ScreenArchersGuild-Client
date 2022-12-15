@@ -1,13 +1,13 @@
 //Fist Visiable information on page appers to house content seen on screen when rendered
 import React, { useEffect, useState } from "react"
-import { useHistory, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { getGuides, deleteGuide } from "./GuideManager.js"
 import "./Guide.css"
 import { GuideCard } from "./GuideCard.js"
 
 export const GuideList = (props) => {
     const [ guides, setGuides ] = useState([])
-    const history = useHistory();
+    const navigate  = useNavigate();
     
     const {guideId} = useParams();
 
@@ -25,7 +25,7 @@ export const GuideList = (props) => {
             <h2>List of Screenshot Guides</h2>
             <button className="btn" id="createBtn"
                 onClick={() => {
-                    history.push({ pathname: "/guides/new" })
+                    navigate({ pathname: "/guides/new" })
                 }}
             >Register New Screenshot Guide
             </button>

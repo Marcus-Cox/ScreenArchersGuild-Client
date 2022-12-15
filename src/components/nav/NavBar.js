@@ -4,10 +4,10 @@
 import React from "react";
 
 //the "Link" component is used to send the user to different pages of the website(components)
-// the "useHistory" is a hook. It lets you acces the hsotry instace used by React Router.
+// the "useNavigate" is a hook. It lets you acces the hsotry instace used by React Router.
 //Using history instance can redirect user to another page.
 //The history instance created by React Router uses a Stack( called “History Stack” ), that stores all the entries the user has visited.
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 //CSS styling for the nav bar
 import "./NavBar.css";
@@ -17,10 +17,10 @@ import "./NavBar.css";
 export const NavBar = () => {
 
   //this is variable, it's defined as a constant "const" and is immutable. 
-  //the constant "history" is given the value of "useHistory".
-  //"const history" takes the react hook "useHistory", makes it into shorthand that can then be attached it to methods
+  //the constant "history" is given the value of "useNavigate".
+  //"const history" takes the react hook "useNavigate", makes it into shorthand that can then be attached it to methods
   //for this app, this is done to lets us redirect the user to another page
-  const history = useHistory();
+  const navigate  = useNavigate();
   return (
     <ul className="navbar">
       <li className="navbar__item">
@@ -41,7 +41,7 @@ export const NavBar = () => {
               //the ".push" method pushes a new entry onto the history stack.
               //having this at the end of this code lets the user successfully log out and redirects them to the login page
               //they go to the login page because "localStorage.removeItem("lu_token");" removes the token they are used as authentication
-              history.push({ pathname: "/" });
+              navigate({ pathname: "/" });
             }}
           >
             Logout

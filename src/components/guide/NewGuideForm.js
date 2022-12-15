@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { createGuide, getGuides } from "./GuideManager.js";
 import "./GuideForm.css";
 
 export const NewGuideForm = () => {
-  const history = useHistory();
+  const navigate  = useNavigate();
   const [guides, setGuides] = useState([]);
 
   const [currentGuide, setGuide] = useState({
@@ -86,7 +86,7 @@ export const NewGuideForm = () => {
           };
 
           createGuide(newGuide).then(() =>
-            history.push("/guides")
+          navigate("/guides")
           );
         }}
         className="btn btn-primary"
