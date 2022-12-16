@@ -2,9 +2,8 @@
 import React, { useEffect, useState } from "react"
 import { useNavigate, useParams } from 'react-router-dom'
 import { getGuides, deleteGuide } from "../../managers/GuideManager.js"
-import "./Guide.css"
 import { GuideCard } from "./GuideCard.js"
-
+import "./Guide.css"
 export const GuideList = (props) => {
     const [ guides, setGuides ] = useState([])
     const navigate  = useNavigate();
@@ -29,6 +28,7 @@ export const GuideList = (props) => {
                 }}
             >Register New Screenshot Guide
             </button>
+
             {/* The .map() method allows you to iterate over an array and modify its elements using a callback function.
             The callback function will then be executed on each of the array's elements. */}
             {/* the callback function "guides" is being used in this case 
