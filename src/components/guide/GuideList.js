@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"
 import { useNavigate, useParams } from 'react-router-dom'
 import { getGuides, deleteGuide } from "../../managers/GuideManager.js"
 import { GuideCard } from "./GuideCard.js"
-import "./Guide.css"
+// import "./Guide.css"
 export const GuideList = (props) => {
     const [ guides, setGuides ] = useState([])
     const navigate  = useNavigate();

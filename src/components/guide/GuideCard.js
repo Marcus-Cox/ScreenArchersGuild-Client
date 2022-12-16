@@ -21,7 +21,7 @@ const navigate  = useNavigate();
       <div className="guide__content">{guide.content}</div>
 
       <div className="buttons">
-        <Link to={`guides/${guide.id}/update`}>
+        <Link to={`${guide.id}/update`}>
           <button className="cardBtn">Edit</button>{" "}
         </Link>
         
