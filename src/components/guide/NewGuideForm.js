@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { createGuide, getGuides } from "../../managers/GuideManager.js";
-import "./GuideForm.css";
+import { createGuide } from "../../managers/GuideManager.js";
+import "react-datepicker/dist/react-datepicker.css";    
+// import "./GuideForm.css";
 
 export const NewGuideForm = () => {
+
   const navigate  = useNavigate();
-  const [guides, setGuides] = useState([]);
 
   const [currentGuide, setGuide] = useState({
     title: "",
@@ -18,6 +19,7 @@ export const NewGuideForm = () => {
     const newGuide = { ...currentGuide };
     let selectedVal = domEvent.target.value;
     newGuide[domEvent.target.id] = selectedVal;
+    console.log(newGuide)
     setGuide(newGuide);
   };
 
@@ -71,6 +73,16 @@ export const NewGuideForm = () => {
           />
         </div>
       </fieldset>
+
+    <fieldset>
+    <div> Publishing Date
+      <input type="date" id="publishing_date" onChange={changeGuideState}
+
+      value={currentGuide.publishing_date}
+      />
+    </div>
+    </fieldset>
+
 
       <button
         type="submit"
