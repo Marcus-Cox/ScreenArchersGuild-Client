@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { createGuide } from "../../managers/GuideManager.js";
-import "react-datepicker/dist/react-datepicker.css";    
 // import "./GuideForm.css";
 
 export const NewGuideForm = () => {

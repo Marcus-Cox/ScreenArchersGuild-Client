@@ -8,8 +8,6 @@ export const GuideCard = ({ guide, delGuide }) => {
   return (
     <section key={`guide--${guide.id}`} className="guide">
       
-      <img className="guide__image" src={guide.image} />
-
       <div className="guide__title"> Title: {guide.title}</div>
       
       <div className="guide__description"> Description:

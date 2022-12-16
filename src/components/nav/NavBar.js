@@ -29,6 +29,13 @@ export const NavBar = () => {
       <li className="navbar__item">
         <Link to="/guides/new">Make New Guide</Link>
       </li>
+      <li className="navbar__item">
+        <Link to="/screenshots">All ScreenShots</Link>
+      </li>
+      
+      <li className="navbar__item">
+        <Link to="/screenshots/new">Make New ScreenShot</Link>
+      </li>
 
       {localStorage.getItem("lu_token") !== null ? (
         <li className="nav-item">
