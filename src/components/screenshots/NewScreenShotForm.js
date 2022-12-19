@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { createScreenShot, getCaptureTools, getEditingTools } from "../../managers/ScreenShotManager.js";
-// import "./ScreenShotForm.css";
+import "./ScreenShotForm.css";
 
 export const NewScreenShotForm = () => {
 
@@ -16,7 +16,7 @@ export const NewScreenShotForm = () => {
     image: "",
     content: "",
     captureTool: "",
-    captureTool: "",
+    editingTool: "",
     timestamp: "",
   });
 

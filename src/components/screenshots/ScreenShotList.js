@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"
 import { useNavigate, useParams } from 'react-router-dom'
 import { getScreenShots, deleteScreenShot } from "../../managers/ScreenShotManager.js"
 import { ScreenShotCard } from "./ScreenShotCard.js"
-// import "./ScreenShot.css"
+import "./ScreenShot.css"
 export const ScreenShotList = (props) => {
     const [ screenshots, setScreenShots ] = useState([])
     const navigate  = useNavigate();
