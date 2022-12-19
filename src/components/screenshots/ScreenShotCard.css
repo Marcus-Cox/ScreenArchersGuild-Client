@@ -28,3 +28,8 @@
     width: 50px;
     margin-left: 10px
 }
+
+.screenshot__image {
+    width: 50%;
+    height: auto;
+}

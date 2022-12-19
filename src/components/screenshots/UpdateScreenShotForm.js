@@ -6,7 +6,9 @@ import "./ScreenShotForm.css";
 export const UpdateScreenShotForm = () => {
 
   const navigate  = useNavigate();
+  
   const [isLoading, setIsLoading] = useState(true);
+
   const {screenshotId } = useParams();
 
   const [captureTools, setCaptureTools] = useState([]);
@@ -18,7 +20,7 @@ export const UpdateScreenShotForm = () => {
     image: "",
     content: "",
     captureTool: "",
-    captureTool: "",
+    editingTool: "",
   });
 
   const CaptureTools = () => {
@@ -80,7 +82,7 @@ export const UpdateScreenShotForm = () => {
           <label htmlFor="image"> Image </label>
           <input
             type="text"
-            name="url"
+            name="image"
             id="image"
             required
             autoFocus

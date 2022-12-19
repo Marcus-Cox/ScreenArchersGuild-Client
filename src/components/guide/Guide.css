@@ -15,6 +15,7 @@ h2,
 }
 
 #createBtn {
+    position: fixed;
     background-color: steelblue;
     border-radius: 10px;
     display: block;
@@ -27,6 +28,7 @@ h2,
 }
 
 #createBtn:hover {
+    position: fixed;
     background-color: lightgray;
     border-radius: 10px;
     color: steelblue;
