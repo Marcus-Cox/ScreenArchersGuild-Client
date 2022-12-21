@@ -37,6 +37,15 @@ export const NavBar = () => {
         <Link to="/screenshots/new">Make New ScreenShot</Link>
       </li>
 
+      <li className="nav-item">
+      <button className="nav-link fakeLink"
+          onClick={() => {
+            navigate("/login" );
+          }}
+      >Login
+      </button>
+      </li>
+
       {localStorage.getItem("lu_token") !== null ? (
         <li className="nav-item">
           <button
