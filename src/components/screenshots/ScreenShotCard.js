@@ -24,6 +24,11 @@ export const ScreenShotCard = ({ screenshot, delScreenShot }) => {
                 {screenshot.editingTool}
         </div>
 
+        <div className="screenshot__category">
+                category:
+                {screenshot.category}
+        </div>
+
       <div className="=screenshot__timestamp">
             Time Stamp:
             {screenshot.timestamp}
