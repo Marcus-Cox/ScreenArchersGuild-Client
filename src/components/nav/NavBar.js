@@ -37,6 +37,10 @@ export const NavBar = () => {
         <Link to="/screenshots/new">Make New ScreenShot</Link>
       </li>
 
+      <li className="navbar__item">
+        <Link to="/screenshots/myScreenshots">My ScreenShots</Link>
+      </li>
+
       <li className="nav-item">
       <button className="nav-link fakeLink"
           onClick={() => {

@@ -8,6 +8,7 @@ import { UpdateGuideForm } from "../components/guide/UpdateGuideForm";
 import { ScreenShotList } from "../components/screenshots/ScreenShotList";
 import { NewScreenShotForm } from "../components/screenshots/NewScreenShotForm";
 import { UpdateScreenShotForm } from "../components/screenshots/UpdateScreenShotForm";
+import { MyScreenshots } from "../components/screenshots/MyScreenshots";
 import { Authorized } from "./Authorized";
 export const ApplicationViews = () => {
   return (
@@ -22,6 +23,8 @@ export const ApplicationViews = () => {
               <Route path="/screenshots" element={<ScreenShotList />} />
               <Route path="/screenshots/new" element={<NewScreenShotForm />} />
               <Route path="/screenshots/:screenshotId/update" element={< UpdateScreenShotForm/>} />
+              <Route path="/screenshots/myScreenshots" element={< MyScreenshots/>} />
+
         </Routes>
     </>
   );

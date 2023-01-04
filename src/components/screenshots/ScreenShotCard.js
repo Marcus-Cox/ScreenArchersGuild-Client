@@ -5,6 +5,9 @@ import "./ScreenShotCard.css";
 export const ScreenShotCard = ({ screenshot, delScreenShot }) => {
 // eslint-disable-next-line
 
+const localScreenshotArcher = localStorage.getItem("lu_token")
+const ScreenshotArcherObject = JSON.parse(localScreenshotArcher)
+
   return (
     <section key={`screenshot--${screenshot.id}`} className="screenshot">
       
@@ -24,30 +27,43 @@ export const ScreenShotCard = ({ screenshot, delScreenShot }) => {
                 {screenshot.editingTool}
         </div>
 
-        <div className="screenshot__category">
+        {/* <div className="screenshot__category">
                 category:
                 {screenshot.category}
-        </div>
+        </div> */}
 
       <div className="=screenshot__timestamp">
             Time Stamp:
             {screenshot.timestamp}
       </div>
 
-      <div className="buttons">
-        <Link to={`${screenshot.id}/update`}>
-          <button className="cardBtn">Edit</button>{" "}
-        </Link>
-        
-        <button
-          className="cardBtn"
-          onClick={() => {
-            delScreenShot(screenshot.id);
-          }}
-        >
-          Delete
-        </button>
-      </div>
+<div className="edit_screenshot">
+                                    {
+                                        ScreenshotArcherObject.username === screenshot.archer.user.username
+                                      
+                                            ? <Link to={`${screenshot.id}/update`}>
+                                            <button className="cardBtn">Edit</button>{" "}
+                                          </Link>
+                                            : <></>
+
+                                    }
+                                </div>
+
+                                <div className="delete_screenshot">
+                                    {
+                                        ScreenshotArcherObject.username === screenshot.archer.user.username
+                                            ? <button
+                                            className="cardBtn"
+                                            onClick={() => {
+                                              delScreenShot(screenshot.id);
+                                            }}
+                                          >
+                                            Delete
+                                          </button>
+                                            : <></>
+
+                                    }
+                                    </div>
     </section>
   );
 };

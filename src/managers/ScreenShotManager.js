@@ -50,6 +50,17 @@ export const createScreenShot = (screenshot) => {
     }).then(response => response.json())
 }
 
+export const getScreenshotsForArcher = () => {
+    return fetch("http://localhost:8000/screenshots?myScreenshots", {
+        headers:{
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "Authorization": `Token ${getToken()}`
+        }
+    })
+    .then(response => response.json())
+}
+
 export const updateScreenShot = (screenshot, id) => {
     console.log('updatedScreenShot', screenshot)
     return fetch(`http://localhost:8000/screenshots/${id}`, {
