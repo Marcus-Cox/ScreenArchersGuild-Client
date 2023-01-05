@@ -2,13 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./ScreenShotCard.css";
 
-export const ScreenShotCard = ({ screenshot, delScreenShot }) => {
+export const ScreenShotCard = ({ screenshot, captureTool, delScreenShot }) => {
   // eslint-disable-next-line
 
   const localScreenshotArcher = localStorage.getItem("lu_token");
   const ScreenshotArcherObject = JSON.parse(localScreenshotArcher);
 
   return (
+    
     <section key={`screenshot--${screenshot.id}`} className="screenshot">
       <img className="screenshot__image" src={screenshot.image} />
 
@@ -19,7 +20,7 @@ export const ScreenShotCard = ({ screenshot, delScreenShot }) => {
 
       <div className="screenshot__captureTool">
         Capture Tool:
-        {screenshot.captureTool}
+        {captureTool}
       </div>
       <div className="screenshot__editingTool">
         Editing Tool:

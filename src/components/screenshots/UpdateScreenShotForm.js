@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { updateScreenShot, getCaptureTools, getEditingTools, getScreenShotById } from "../../managers/ScreenShotManager.js";
+import { updateScreenShot, getCaptureTools, getEditingTools, getScreenShotById, getCategorys } from "../../managers/ScreenShotManager.js";
 import "./ScreenShotForm.css";
 
 export const UpdateScreenShotForm = () => {
@@ -15,11 +15,13 @@ export const UpdateScreenShotForm = () => {
 
   const [editingTools, setEditingTools] = useState([]);
 
+  const [categorys, setCategorys] = useState([]);
 
   const [currentScreenShot, setScreenShot] = useState({
     image: "",
     content: "",
     captureTool: "",
+    category: [],
     editingTool: "",
   });
 
@@ -43,6 +45,16 @@ export const UpdateScreenShotForm = () => {
     EditingTools();
   }, []);
 
+    const Categorys = () => {
+    return getCategorys().then((data) => {
+      setCategorys(data);
+    });
+  };
+
+  useEffect(() => {
+    Categorys();
+  }, []);
+
   const loadScreenShot = () => {
     if (screenshotId) {
       getScreenShotById(screenshotId).then((data) => {
@@ -52,6 +64,7 @@ export const UpdateScreenShotForm = () => {
           content: data.content,
           captureTool: data.captureTool,
           editingTool: data.editingTool,
+          category: data.category,
         });
       });
     }
@@ -154,6 +167,31 @@ export const UpdateScreenShotForm = () => {
         </div>
       </fieldset>
 
+      <fieldset>
+        <div className="form-group">
+          <label htmlFor="category">ScreenShot Category</label>
+          <select
+             className="form-control"
+            name="category"
+            id="category"
+            required
+            value={currentScreenShot.category}
+            onChange={handleFieldChange}
+          >
+            
+        <option value="0">Please select ...
+        </option>
+        {categorys.map((category) => (
+            <option key={category.id} value={category.id}>
+                {category.description}
+            </option>
+        ))}
+        </select>
+        </div>
+      </fieldset>
+
+      
+
       <button
         type="submit"
         onClick={(evt) => {
@@ -164,7 +202,8 @@ export const UpdateScreenShotForm = () => {
             image: currentScreenShot.image,
             content: currentScreenShot.content,
             captureTool: currentScreenShot.captureTool,
-            editingTool: currentScreenShot.editingTool};
+            editingTool: currentScreenShot.editingTool,
+            category: currentScreenShot.category};
 
           updateScreenShot(editedScreenshot, screenshotId).then(() =>
           navigate("/screenshots")

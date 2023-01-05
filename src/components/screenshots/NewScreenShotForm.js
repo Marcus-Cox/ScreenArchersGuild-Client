@@ -22,9 +22,7 @@ export const NewScreenShotForm = () => {
     content: "",
     captureTool: "",
     editingTool: "",
-    // new code
     category: [],
-    // new code
     timestamp: "",
   });
 
@@ -48,8 +46,6 @@ export const NewScreenShotForm = () => {
     EditingTools();
   }, []);
 
-  // new code
-
   const Categorys = () => {
     return getCategorys().then((data) => {
       setCategorys(data);
@@ -59,8 +55,6 @@ export const NewScreenShotForm = () => {
   useEffect(() => {
     Categorys();
   }, []);
-
-  // new code
 
   const changeScreenShotState = (domEvent) => {
     const newScreenShot = { ...currentScreenShot };
@@ -146,7 +140,6 @@ export const NewScreenShotForm = () => {
         </div>
       </fieldset>
 
-      {/* new code */}
       <fieldset>
         <div className="form-group">
           <label htmlFor="category">ScreenShot Category</label>
@@ -167,7 +160,6 @@ export const NewScreenShotForm = () => {
           </select>
         </div>
       </fieldset>
-      {/* new code */}
 
       <fieldset>
         <div>

@@ -70,14 +70,21 @@ export const MyScreenshots = ({ delScreenShot }) => {
                     className="screenshot__image"
                     key={`screenshot--${filteredScreenshot.image}`}
                   />
+
                   <div className="archer has-text-left">
                     Content: {filteredScreenshot.content}
                   </div>
+
                   <div className="archer has-text-left">
                     Capture Tool: {filteredScreenshot.captureTool}
                   </div>
+
                   <div className="archer has-text-left">
                     Editing Tool: {filteredScreenshot.editingTool}
+                  </div>
+
+                  <div className="archer has-text-left">
+                  Category: {filteredScreenshot.category}
                   </div>
 
                   {/* <div className="archer has-text-left">category: {filteredScreenshot.category}</div> */}

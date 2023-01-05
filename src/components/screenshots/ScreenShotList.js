@@ -22,6 +22,8 @@ export const ScreenShotList = (props) => {
     return (
         <article className="screenshots">
             <h2>Gallery of Screenshots</h2>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}>
+
             <button className="btn" id="createBtn"
                 onClick={() => {
                     navigate({ pathname: "/ScreenShots/new" })
@@ -41,8 +43,10 @@ export const ScreenShotList = (props) => {
                 <ScreenShotCard
                 key={screenshot.id}
                 screenshot={screenshot}
+                captureTool={screenshot.captureTool}
                 delScreenShot={delScreenShot} />
             )}
+            </div>
         </article>
     )
 }
